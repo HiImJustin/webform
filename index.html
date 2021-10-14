@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym registration form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/5e62456313.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    
+    <form>
+    
+    <div id="helpbutton">?
+        <img id="helpvideo" src="video/helpgif.gif" alt="gif that shows the user how to correctly enter their details">
+    </div>
+
+    <fieldset>
+        
+        <legend>Gym</legend>
+
+        <section id="firstnamesection">
+            
+            <input 
+            type="text" 
+            id="firstname" 
+            placeholder="First name" 
+            minlength="2" 
+            maxlength="42"
+            pattern="[A-Z][a-z]{1,}" 
+            required
+            title="Starting Character must be a capital letter">
+            <label for="firstname">First Name</label>
+            <div id="firstnameerrordiv">Please enter your first name</div>
+            <div id="firstnameimg"><i class="fas fa-male"></i></div>
+        </section>
+
+        <section id="lastnamesection">
+            
+            <input type="text" name="lastname" id="lastname" placeholder="Last name"
+            minlength="2" 
+            maxlength="42"
+            pattern="[A-Z][a-z]{1,}"
+            required
+            title="Your surname must start with a capital letter">
+            <label for="lastname">Last Name</label>
+            <div>Please enter your last name</div>
+            <div id="lastnameimg"> <i class="fas fa-male"></i></div>
+        </section>
+
+        <section id="hiddenfullname">
+            <input type="text"
+            id="fullname"
+            placeholder="Full Name"
+            minlength="2"
+            maxlength="42"
+            pattern="^[A-Z][a-zA-Z]{0,} [a-zA-Z]{1,}$"
+            required
+            title="The first letter must be capitalised">
+            <label for="hiddenfullname">First and surname</label>
+            <div id="fullnamediv">Please enter your full name</div>
+            <div id="fullnameimg">c</div>
+            
+        </section>
+
+        <section id="emailsection">
+            <input type="email" 
+            name="email" 
+            maxlength="128"
+            id="email" 
+            placeholder="Email"
+            required
+            title="Your email must have the @ symbol to be valid">
+            <label for="email">Email</label>
+            <div>Please enter your email</div>
+            <div id="emailimg"><i class="fas fa-envelope"></i></div>
+        </section>
+
+        <section id="phonenumber">
+            <input type="tel" 
+            name="phonenumber" 
+            id="phonenumberinput" 
+            placeholder="Phonenumber:" 
+            pattern="[0-9() +-]{10}"
+            minlength="10"
+            maxlength="10"
+            required
+            title="Your phone number must be 10 digits in length">
+            <label for="phonenumberinput">Phonenumber</label>
+            <div>please enter your phone number</div>
+            <div id="phonenumberimg"><i class="fas fa-phone"></i></div>
+        </section>
+
+        <section id="nutrition-checkbox">  
+            <label for="no-option">Yes</label>
+            <input type="radio" id="yes-option" name="yes-no">
+            <label for="no-option">No</label>
+            <input type="radio" id="no-option" name="yes-no" required  title="please select an option">
+            <label for="yes-option">Do you want to recieve fitness and nutrition advice?</label>  
+        </section>
+
+
+        <section id="questionair2">
+            <label id="q2label" for="cardio">What do you want to work on</label>
+                <label for="cardio">Cardio</label>
+                <input type="checkbox" id="cardio">
+                <label for="strength">Strength Training</label>
+                <input type="checkbox" id="strength">
+                <label for="endurance">Endurance Training</label>
+                <input type="checkbox" id="endurance">
+                <label for="body-building">Body Building</label>
+                <input type="checkbox" id="body-building">
+        </section>
+
+        <section>
+            <input type="submit" name="submit" id="submit">
+        </section>
+
+
+    </fieldset>
+
+</form>
+
+
+</body>
+
+</html>

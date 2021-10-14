@@ -1,0 +1,372 @@
+* {
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+body {
+    background-color:rgb(100, 95, 95);
+    margin: 0;
+    height: 125vh;
+    width: 98vw;
+}
+
+form {
+    width: 380px;
+    height: fit-content;
+    margin: 0 auto;
+    position: relative;
+    top: 10px;
+    border: solid 2px black;
+    border-radius: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: skyblue;
+}
+fieldset {
+    width: 70%;
+    height:90%;
+    display: grid;
+    margin: 0 auto;
+    border: none;
+    margin-top: 20px;
+}
+section {
+    padding: 4px 0px 5px 0px;
+    margin-bottom: 18px;
+}
+input {
+    width: 260px;
+    height: 36px;
+    margin-top: 4px;
+    border-radius: 4px;
+    font-size: 16px;
+    padding-left: 4px;
+    border: solid 2px black;
+}
+input:required ~ label::after {
+    content: " *";
+    color: red;
+}
+
+/* styling for grid reversing */
+#firstnamesection {
+    display: grid;
+    grid-template-rows: auto auto 1px;
+}
+label[for="firstname"] {
+    grid-row-start: 1;
+}
+
+#lastnamesection {
+    display: grid;
+    grid-template-rows: auto auto 1px;
+}
+label[for="lastname"] {
+    grid-row-start: 1;
+}
+
+#hiddenfullname {
+    display: grid;
+    grid-template-rows: auto auto 1px;
+}
+label[for="hiddenfullname"] {
+    grid-row-start: 1;
+}
+
+#emailsection {
+    display: grid;
+    grid-template-rows: auto auto 1px;
+}
+label[for="email"] {
+    grid-row-start: 1;
+}
+
+#phonenumber {
+    display: grid;
+    grid-template-rows: auto auto 1px;
+}
+label[for="phonenumber"] {
+    grid-row-start: 1;
+}
+
+label[for="yes-option"] {
+    grid-row-start: 1;
+}
+/* end of styling for grid reversing */
+
+/* first checkbox section */
+#nutrition-checkbox {
+    display: grid;
+    grid: 45px 30px  / 40px 220px;
+    margin: 0;
+}
+#nutrition-checkbox input[type='radio'] {
+    margin: 0;
+    width: 20px; 
+    height: 20px;
+}
+label[for="yes-option"] {
+    grid-column: 1 / span 2;
+}
+input[type='radio'] {
+    width: 20px;
+    height: 20px;
+}
+/* checkbox section end */
+
+/* Checkbox section 2 */
+#questionair2 {
+    display: grid;
+    grid:  30px / 180px 50px;
+    margin: 0;
+}
+#q2label {
+    grid-column: 1 / span 2;
+}
+#questionair2 input[type='checkbox'] {
+    margin: 0;
+    margin-top: 5px;
+    width: 20px; 
+    height: 20px;
+}
+#questionair2 label {
+    margin-top: 5px;
+}
+/* checkbox section 2 end */
+
+/* error div */
+input:not(:placeholder-shown):invalid {
+    border: solid 2px red;
+}
+input:not(:placeholder-shown):invalid ~ div {
+    display: grid;
+}
+input:not(:focus):not(:placeholder-shown):invalid + #fullnamediv {
+    display: grid;
+}
+div {
+    display: none;
+}
+/* error div end */
+
+
+#hiddenfullname {
+    display: none;
+}
+
+/* absolute positioned elements */
+#firstnameimg {
+    display: block;
+    position: absolute;
+    left: 300px;
+    top: 70px;
+    font-size: 26px;
+}
+#lastnameimg {
+    display: block;
+    position: absolute;
+    left: 300px;
+    top: 160px;
+    font-size: 26px;
+}
+#emailimg {
+    display: block;
+    position: absolute;
+    left: 290px;
+    top: 250px;
+    font-size: 26px;
+}
+#phonenumberimg {
+    display: block;
+    position: absolute;
+    left: 290px;
+    top: 324px;
+    font-size: 26px;
+}
+#helpvideo {
+    display: none;
+    position: absolute;
+    left: -260px;
+    top: 1px;
+}
+#helpbutton {
+    position: absolute;
+    display: block;
+    left: 305px;
+    top: 20px;
+    font-size: 22px;
+}
+#helpbutton:hover > #helpvideo {
+    display: block;
+    height: 600px;
+    width: 320px;
+}
+/* absolute positioned elements end */
+
+/* aspects for mobile view */
+@media screen and (min-width:300px ) and (max-width:350px) {
+    #lastnamesection {
+        display: none;
+    }
+    #firstnamesection {
+        display: none;
+    }
+    #hiddenfullname {
+        display: grid;
+    }
+    body {
+        width: 99vw;
+        height: 115vh;
+        padding-bottom: 20px;
+    }
+    form {
+        width: 95vw;
+        height: fit-content;
+        padding-bottom: 20px;
+    }
+    #hiddenfullname label {
+        display: none;
+    }
+    #emailsection label {
+        display: none;
+    }
+    #phonenumber label {
+        display: none;
+    }
+
+/* Absolute images in mobile view */
+    #fullnameimg {
+        display: block;
+        position: absolute;
+        left: 260px;
+        top: 58px;
+        font-size: 26px;
+    }
+    #emailimg {
+        position: absolute;
+        left: 260px;
+        top: 144px;
+    }
+    #phonenumberimg {
+        position: absolute;
+        left: 260px;
+        top: 230px;
+    }
+    #helpbutton {
+        left: 262px
+    }
+    /*end of absolute images */
+}
+
+@media screen and (min-width: 350px) and (max-width:380px) {
+    #lastnamesection {
+        display: none;
+    }
+    #firstnamesection {
+        display: none;
+    }
+    #hiddenfullname {
+        display: grid;
+    }
+    body {
+        width: 99vw;
+        height: 115vh;
+        padding-bottom: 20px;
+    }
+    form {
+        width: 95vw;
+        height: fit-content;
+        padding-bottom: 20px;
+    }
+    #hiddenfullname label {
+        display: none;
+    }
+    #emailsection label {
+        display: none;
+    }
+    #phonenumber label {
+        display: none;
+    }
+
+/* Absolute images in mobile view */
+    #fullnameimg {
+        display: block;
+        position: absolute;
+        left: 285px;
+        top: 58px;
+        font-size: 26px;
+    }
+    #emailimg {
+        position: absolute;
+        left: 285px;
+        top: 144px;
+    }
+    #phonenumberimg {
+        position: absolute;
+        left: 285px;
+        top: 230px;
+    }
+    #helpbutton {
+        left: 285px
+    }
+}
+/* end of absolute images values */
+
+@media screen and (min-width:380px) and (max-width:415px) {
+    input {
+        width: 310px;
+    }
+    fieldset {
+        width: 80%;
+    }
+    #lastnamesection {
+        display: none;
+    }
+    #firstnamesection {
+        display: none;
+    }
+    #hiddenfullname {
+        display: grid;
+    }
+    body {
+        width: 99vw;
+        height: 115vh;
+        padding-bottom: 20px;
+    }
+    form {
+        width: 95vw;
+        height: fit-content;
+        padding-bottom: 20px;
+    }
+    #hiddenfullname label {
+        display: none;
+    }
+    #emailsection label {
+        display: none;
+    }
+    #phonenumber label {
+        display: none;
+    }
+    /* Absolute images in mobile view */
+    #fullnameimg {
+        display: block;
+        position: absolute;
+        left: 310px;
+        top: 58px;
+        font-size: 26px;
+    }
+    #emailimg {
+        position: absolute;
+        left: 310px;
+        top: 144px;
+    }
+    #phonenumberimg {
+        position: absolute;
+        left: 310px;
+        top: 230px;
+    }
+    #helpbutton {
+        left: 310px
+    }
+}
+/* dont add anycode below here Justin */
