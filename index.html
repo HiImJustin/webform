@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gym registration form</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
     <script src="https://kit.fontawesome.com/5e62456313.js" crossorigin="anonymous"></script>
 </head>
 
@@ -21,10 +21,9 @@
 
     <fieldset>
         
-        <legend>Gym</legend>
+        <legend>Get fit quick, no scam</legend>
 
         <section id="firstnamesection">
-            
             <input 
             type="text" 
             id="firstname" 
@@ -36,12 +35,13 @@
             title="Starting Character must be a capital letter">
             <label for="firstname">First Name</label>
             <div id="firstnameerrordiv">Please enter your first name</div>
-            <div id="firstnameimg"><i class="fas fa-male"></i></div>
+            <i id="firstnameimg" class="fas fa-male"></i>
         </section>
 
         <section id="lastnamesection">
             
-            <input type="text" name="lastname" id="lastname" placeholder="Last name"
+            <input type="text" name="lastname" id="lastname" 
+            placeholder="Last name"
             minlength="2" 
             maxlength="42"
             pattern="[A-Z][a-z]{1,}"
@@ -49,7 +49,7 @@
             title="Your surname must start with a capital letter">
             <label for="lastname">Last Name</label>
             <div>Please enter your last name</div>
-            <div id="lastnameimg"> <i class="fas fa-male"></i></div>
+            <i id="lastnameimg" class="fas fa-male"></i>
         </section>
 
         <section id="hiddenfullname">
@@ -63,7 +63,7 @@
             title="The first letter must be capitalised">
             <label for="hiddenfullname">First and surname</label>
             <div id="fullnamediv">Please enter your full name</div>
-            <div id="fullnameimg">c</div>
+            <i id="fullnameimg" class="fas fa-male"></i>
             
         </section>
 
@@ -77,37 +77,38 @@
             title="Your email must have the @ symbol to be valid">
             <label for="email">Email</label>
             <div>Please enter your email</div>
-            <div id="emailimg"><i class="fas fa-envelope"></i></div>
+            <i id="emailimg" class="fas fa-envelope"></i>
         </section>
 
         <section id="phonenumber">
             <input type="tel" 
             name="phonenumber" 
             id="phonenumberinput" 
-            placeholder="Phonenumber:" 
+            placeholder="Phone Number:" 
             pattern="[0-9() +-]{10}"
             minlength="10"
             maxlength="10"
             required
             title="Your phone number must be 10 digits in length">
-            <label for="phonenumberinput">Phonenumber</label>
-            <div>please enter your phone number</div>
-            <div id="phonenumberimg"><i class="fas fa-phone"></i></div>
+            <label for="phonenumberinput">Phone Number</label>
+            <div>Please enter your Phone Number</div>
+            <i id="phonenumberimg" class="fas fa-phone"></i>
         </section>
 
         <section id="nutrition-checkbox">  
             <label for="no-option">Yes</label>
-            <input type="radio" id="yes-option" name="yes-no">
+            <input type="radio" id="yes-option" checked="checked" name="yes-no">
             <label for="no-option">No</label>
             <input type="radio" id="no-option" name="yes-no" required  title="please select an option">
-            <label for="yes-option">Do you want to recieve fitness and nutrition advice?</label>  
+            <label for="yes-option">Do you want to recieve fitness and nutrition advice?</label>
+            <div id="radio-errordiv">Please select an option</div>
         </section>
 
 
         <section id="questionair2">
-            <label id="q2label" for="cardio">What do you want to work on</label>
+            <label id="q2label" for="cardio">What do you want to focus on?</label>
                 <label for="cardio">Cardio</label>
-                <input type="checkbox" id="cardio">
+                <input type="checkbox" id="cardio"> 
                 <label for="strength">Strength Training</label>
                 <input type="checkbox" id="strength">
                 <label for="endurance">Endurance Training</label>
@@ -115,6 +116,7 @@
                 <label for="body-building">Body Building</label>
                 <input type="checkbox" id="body-building">
         </section>
+
 
         <section>
             <input type="submit" name="submit" id="submit">

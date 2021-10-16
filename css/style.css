@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;0,600;1,500;1,600&display=swap');
 * {
     outline: 0;
     padding: 0;
@@ -5,9 +7,9 @@
     border: 0;
 }
 body {
-    background-color:rgb(100, 95, 95);
+    background-color:rgb(53, 48, 48);
     margin: 0;
-    height: 125vh;
+    height: 100vh;
     width: 98vw;
 }
 
@@ -20,7 +22,7 @@ form {
     border: solid 2px black;
     border-radius: 4px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: skyblue;
+    background: linear-gradient(to bottom right, hsl(206, 71%, 32%), hsl(192, 58%, 40%), hsl(204, 53%, 40%),hsl(223, 48%, 40%), hsl(250, 52%, 28%));
 }
 fieldset {
     width: 70%;
@@ -30,18 +32,40 @@ fieldset {
     border: none;
     margin-top: 20px;
 }
+legend {
+    font-family: roboto;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
 section {
-    padding: 4px 0px 5px 0px;
+    padding: 4px 0px 3px 0px;
     margin-bottom: 18px;
 }
 input {
     width: 260px;
     height: 36px;
-    margin-top: 4px;
+    margin-bottom: 4px;
     border-radius: 4px;
     font-size: 16px;
     padding-left: 4px;
     border: solid 2px black;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.781);
+    position: relative;
+}
+input[type='submit'] {
+    width: 274px;
+    height: 40px;
+    padding-left: 4px;
+}
+label {
+    margin-bottom: 1px;
+    font-size: 17px;
+    font-family: serif;
+    font-weight: 500;
+}
+input:hover {
+    border: solid 2px #551199;
 }
 input:required ~ label::after {
     content: " *";
@@ -52,9 +76,13 @@ input:required ~ label::after {
 #firstnamesection {
     display: grid;
     grid-template-rows: auto auto 1px;
+    font-size: 17px;
 }
 label[for="firstname"] {
     grid-row-start: 1;
+    font-weight: 600;
+    font-size: 17px;
+    font-family: roboto;
 }
 
 #lastnamesection {
@@ -63,6 +91,9 @@ label[for="firstname"] {
 }
 label[for="lastname"] {
     grid-row-start: 1;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: roboto;
 }
 
 #hiddenfullname {
@@ -71,6 +102,9 @@ label[for="lastname"] {
 }
 label[for="hiddenfullname"] {
     grid-row-start: 1;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: roboto;
 }
 
 #emailsection {
@@ -79,18 +113,28 @@ label[for="hiddenfullname"] {
 }
 label[for="email"] {
     grid-row-start: 1;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: roboto;
 }
 
 #phonenumber {
     display: grid;
     grid-template-rows: auto auto 1px;
 }
-label[for="phonenumber"] {
+label[for="phonenumberinput"] {
     grid-row-start: 1;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: roboto;
 }
 
 label[for="yes-option"] {
     grid-row-start: 1;
+    grid-column: 1 / span 2;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: roboto;
 }
 /* end of styling for grid reversing */
 
@@ -99,29 +143,28 @@ label[for="yes-option"] {
     display: grid;
     grid: 45px 30px  / 40px 220px;
     margin: 0;
+
 }
 #nutrition-checkbox input[type='radio'] {
     margin: 0;
-    width: 20px; 
     height: 20px;
-}
-label[for="yes-option"] {
-    grid-column: 1 / span 2;
-}
-input[type='radio'] {
     width: 20px;
-    height: 20px;
+    box-shadow: none;
 }
+
 /* checkbox section end */
 
 /* Checkbox section 2 */
 #questionair2 {
     display: grid;
-    grid:  30px / 180px 50px;
+    grid:  30px / 180px 80px;
     margin: 0;
 }
 #q2label {
     grid-column: 1 / span 2;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: roboto;
 }
 #questionair2 input[type='checkbox'] {
     margin: 0;
@@ -132,17 +175,33 @@ input[type='radio'] {
 #questionair2 label {
     margin-top: 5px;
 }
+#radio-errordiv {
+    grid-column:  1 / span 2 ;
+}
 /* checkbox section 2 end */
 
 /* error div */
+input:focus:not(:placeholder-shown):valid {
+    border: solid 2px green;
+}
 input:not(:placeholder-shown):invalid {
     border: solid 2px red;
 }
 input:not(:placeholder-shown):invalid ~ div {
     display: grid;
+    color: red;
 }
 input:not(:focus):not(:placeholder-shown):invalid + #fullnamediv {
     display: grid;
+}
+input:hover {
+    background: rgba(17, 17, 17, 0.575);
+}
+input:hover::placeholder {
+    color: black;
+}
+.fas {
+    color: black;
 }
 div {
     display: none;
@@ -159,35 +218,38 @@ div {
     display: block;
     position: absolute;
     left: 300px;
-    top: 70px;
+    top: 78px;
     font-size: 26px;
 }
 #lastnameimg {
     display: block;
     position: absolute;
     left: 300px;
-    top: 160px;
+    top: 168px;
     font-size: 26px;
 }
 #emailimg {
     display: block;
     position: absolute;
     left: 290px;
-    top: 250px;
+    top: 258px;
     font-size: 26px;
 }
 #phonenumberimg {
     display: block;
     position: absolute;
     left: 290px;
-    top: 324px;
+    top: 350px;
     font-size: 26px;
 }
 #helpvideo {
     display: none;
     position: absolute;
-    left: -260px;
+    left: -285px;
     top: 1px;
+    z-index: 1;
+    height: 680px;
+    width: 340px;
 }
 #helpbutton {
     position: absolute;
@@ -198,13 +260,16 @@ div {
 }
 #helpbutton:hover > #helpvideo {
     display: block;
-    height: 600px;
-    width: 320px;
 }
 /* absolute positioned elements end */
 
 /* aspects for mobile view */
 @media screen and (min-width:300px ) and (max-width:350px) {
+    #helpvideo {
+        height: 540px;
+        width: 280px;
+        left: -250px;
+    }
     #lastnamesection {
         display: none;
     }
@@ -216,8 +281,7 @@ div {
     }
     body {
         width: 99vw;
-        height: 115vh;
-        padding-bottom: 20px;
+        height: 110vh;
     }
     form {
         width: 95vw;
@@ -239,18 +303,18 @@ div {
         display: block;
         position: absolute;
         left: 260px;
-        top: 58px;
+        top: 56px;
         font-size: 26px;
     }
     #emailimg {
         position: absolute;
-        left: 260px;
-        top: 144px;
+        left: 250px;
+        top: 124px;
     }
     #phonenumberimg {
         position: absolute;
-        left: 260px;
-        top: 230px;
+        left: 250px;
+        top: 196px;
     }
     #helpbutton {
         left: 262px
@@ -270,8 +334,7 @@ div {
     }
     body {
         width: 99vw;
-        height: 115vh;
-        padding-bottom: 20px;
+        height: 110vh;
     }
     form {
         width: 95vw;
@@ -298,26 +361,35 @@ div {
     }
     #emailimg {
         position: absolute;
-        left: 285px;
-        top: 144px;
+        left: 275px;
+        top: 128px;
     }
     #phonenumberimg {
         position: absolute;
-        left: 285px;
-        top: 230px;
+        left: 275px;
+        top: 195px;
     }
     #helpbutton {
         left: 285px
+    }
+    #helpvideo {
+        height: 560px;
+        width: 325px;
+        left: -270px;
     }
 }
 /* end of absolute images values */
 
 @media screen and (min-width:380px) and (max-width:415px) {
+   
     input {
         width: 310px;
     }
     fieldset {
         width: 80%;
+    }
+    input[type='submit'] {
+        width: 318px;
     }
     #lastnamesection {
         display: none;
@@ -330,12 +402,12 @@ div {
     }
     body {
         width: 99vw;
-        height: 115vh;
-        padding-bottom: 20px;
+        height: fit-content;
+        padding-bottom: 30px;
     }
     form {
+        height: 100vh;
         width: 95vw;
-        height: fit-content;
         padding-bottom: 20px;
     }
     #hiddenfullname label {
@@ -351,22 +423,26 @@ div {
     #fullnameimg {
         display: block;
         position: absolute;
-        left: 310px;
+        left: 320px;
         top: 58px;
         font-size: 26px;
     }
     #emailimg {
         position: absolute;
         left: 310px;
-        top: 144px;
+        top: 142px;
     }
     #phonenumberimg {
         position: absolute;
         left: 310px;
-        top: 230px;
+        top: 236px;
     }
     #helpbutton {
-        left: 310px
+        left: 320px
+    }
+    #helpvideo {
+        height: 660px;
+        width: 340px;
     }
 }
 /* dont add anycode below here Justin */
